@@ -5,8 +5,8 @@ const Navbar = () => {
   const routes = [
     {
       id: 0,
-      text: 'Books',
-      path: '/books',
+      text: 'Home',
+      path: '/',
     },
     {
       id: 1,

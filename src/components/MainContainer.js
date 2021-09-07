@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Books from './Books';
-import Categories from './Categories';
+import Books from '../redux/books/Books';
+import Categories from '../redux/categories/Categories';
 import Navbar from './Navbar';
 
 const MainContainer = () => (
   <>
     <Navbar />
     <Switch>
-      <Route exact path="/books">
+      <Route exact path="/">
         <Books />
       </Route>
       <Route path="/categories">
