@@ -10,6 +10,11 @@ const MainContainer = () => (
     <Switch>
       <Route exact path="/">
         <BookList />
+        <form>
+          <input placeholder="Book Title" />
+          <input placeholder="Book Author" />
+          <button type="button">Add Book</button>
+        </form>
       </Route>
       <Route path="/categories">
         <Categories />
