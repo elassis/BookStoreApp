@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import BookList from './BookList';
 import Categories from './Categories';
 import Navbar from './Navbar';
+import Form from './Form';
 
 const MainContainer = () => (
   <>
@@ -10,11 +11,7 @@ const MainContainer = () => (
     <Switch>
       <Route exact path="/">
         <BookList />
-        <form>
-          <input placeholder="Book Title" />
-          <input placeholder="Book Author" />
-          <button type="button">Add Book</button>
-        </form>
+        <Form />
       </Route>
       <Route path="/categories">
         <Categories />
