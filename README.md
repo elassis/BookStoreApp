@@ -1,5 +1,5 @@
 # What is this Project About ❓
-- This a project that displays a bookstore web application where you can add, remove and categorize books inside.
+- This a project that displays a bookstore web application where you can add, remove and organize the books by category inside.
 
 ## Prerequisites ☑️
 - NodeJS
