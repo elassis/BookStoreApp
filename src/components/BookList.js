@@ -4,7 +4,6 @@ import Books from './Books';
 
 const BookList = () => {
   const mockBooks = Array.from(useSelector((state) => state.addRemove));
-  console.log(mockBooks);
   return (
     <ul>
       {
