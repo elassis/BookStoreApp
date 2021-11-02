@@ -7,6 +7,10 @@ export const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
+export const removeBook = (payload) => ({
+  type: REMOVE_BOOK,
+  payload,
+});
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {

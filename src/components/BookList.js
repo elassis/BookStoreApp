@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import Books from './Books';
 
 const BookList = () => {
-  const mockBooks = Array.from(useSelector((state) => state));
+  const mockBooks = Array.from(useSelector((state) => state.addRemove));
+  console.log(mockBooks);
   return (
     <ul>
       {
