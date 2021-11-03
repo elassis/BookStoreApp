@@ -1,32 +1,52 @@
 import React from 'react';
-// import useDispatch hook
 import { useDispatch } from 'react-redux';
-// import your Action Creators
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/Books';
+import { addBook, updateState } from '../redux/books/Books';
 
 const Form = () => {
   const dispatch = useDispatch();
 
-  const submitBookToStore = () => {
+  const submitBookToStore = async () => {
     const argTitle = document.querySelector('#title');
-    const argAuthor = document.querySelector('#author');
+    const argCategory = document.querySelector('#category');
 
     const newBook = {
-      id: uuidv4(), // make sure it's unique
+      itemId: uuidv4(), // make sure it's unique
       title: argTitle.value,
-      author: argAuthor.value,
+      category: argCategory.value,
     };
-
     argTitle.value = '';
-    argAuthor.value = '';
+    argCategory.value = '';
 
-    dispatch(addBook(newBook));
+    const saveBook = (body) => {
+      const { itemId, title, category } = body;
+      const id = itemId; const argTitle = title; const
+        argCategory = category;
+      const response = fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/bEgERlj6Xe6fGI4VRgmi/books', {
+        method: 'POST',
+        body: JSON.stringify({
+          item_id: id,
+          title: argTitle,
+          category: argCategory,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response);
+
+      return response;
+    };
+    const result = await saveBook(newBook);
+    if (result.status === 201) {
+      updateState(dispatch, addBook);
+    }
   };
+
   return (
     <form>
       <input id="title" placeholder="Book Title" />
-      <input id="author" placeholder="Book Author" />
+      <input id="category" placeholder="Book Category" />
       <button type="button" onClick={() => { submitBookToStore(); }}>Add Book</button>
     </form>
   );

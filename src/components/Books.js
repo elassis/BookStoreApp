@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/Books';
+import { removeBook, updateState } from '../redux/books/Books';
 
 const Books = (props) => {
-  const { id, title, author } = props;
+  const {
+    id, title, category,
+  } = props;
   const dispatch = useDispatch();
-  const removeThisBook = (argId, argTitle, argAuthor) => {
-    const bookToRemove = {
-      id: argId,
-      title: argTitle,
-      author: argAuthor,
-    };
-    dispatch(removeBook(bookToRemove));
+  const removeThisBook = async (argId) => {
+    const resp = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/bEgERlj6Xe6fGI4VRgmi/books/${argId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response);
+    if (resp.status === 201) {
+      updateState(dispatch, removeBook);
+    }
   };
+
   return (
 
     <li id={id}>
       <p>{title}</p>
-      <p>{author}</p>
-      <button type="button" onClick={() => { removeThisBook(id, title, author); }}>Remove Book</button>
+      <p>{category}</p>
+      <button type="button" onClick={() => { removeThisBook(id); }}>Remove Book</button>
     </li>
 
   );
@@ -28,7 +35,7 @@ const Books = (props) => {
 Books.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Books;
