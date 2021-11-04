@@ -23,10 +23,30 @@ const Books = (props) => {
 
   return (
 
-    <li id={id}>
-      <p>{title}</p>
-      <p>{category}</p>
-      <button type="button" onClick={() => { removeThisBook(id); }}>Remove Book</button>
+    <li className="book" id={id}>
+      <div className="book-col-1">
+        <div className="col1-subcol-1">
+          <p className="book-category">{category}</p>
+          <p className="book-title">{title}</p>
+        </div>
+        <div className="col1-subcol-2">
+          <button type="button" className="book-btnc1">comment</button>
+          <button type="button" className="book-btnc1" onClick={() => { removeThisBook(id); }}>remove</button>
+          <button type="button" className="book-btnc1">edit</button>
+        </div>
+      </div>
+      <div className="book-col-2">
+        <div className="oval" />
+        <div className="progress-text">
+          <p className="porcentage">100%</p>
+          <p className="completed">completed</p>
+        </div>
+      </div>
+      <div className="book-col-3">
+        <p className="current-chapter">current chapter</p>
+        <p className="current-lesson">chapter 17</p>
+        <button type="button" className="update-progress">update progress</button>
+      </div>
     </li>
 
   );

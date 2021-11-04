@@ -44,11 +44,20 @@ const Form = () => {
   };
 
   return (
-    <form>
-      <input id="title" placeholder="Book Title" />
-      <input id="category" placeholder="Book Category" />
-      <button type="button" onClick={() => { submitBookToStore(); }}>Add Book</button>
-    </form>
+    <div className="form-container">
+      <p>add new book</p>
+      <form>
+        <input id="title" placeholder="Book Title" />
+        <select id="category" placeholder="Book Category">
+          <option>category</option>
+          <option>action</option>
+          <option>adventure</option>
+          <option>fiction</option>
+          <option>comedy</option>
+        </select>
+        <button type="button" className="addbook" onClick={() => { submitBookToStore(); }}>Add Book</button>
+      </form>
+    </div>
   );
 };
 

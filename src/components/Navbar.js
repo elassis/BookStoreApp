@@ -1,27 +1,33 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../App.css';
 
 const Navbar = () => {
   const routes = [
     {
       id: 0,
-      text: 'Home',
+      text: 'BOOKS',
       path: '/',
+      class: 'BOOKS',
     },
     {
       id: 1,
-      text: 'Categories',
+      text: 'CATEGORIES',
       path: '/categories',
+      class: 'CATEGORIES',
     },
   ];
 
   return (
-    <nav>
-      <h1>Logo</h1>
-      <ul>
+    <nav className="nav-container">
+      <div className="logo">
+        <p className="logo-text-1">bookstore</p>
+        <p className="logo-text-2">cms</p>
+      </div>
+      <ul className="links">
         {
       routes.map((route) => (
-        <li key={route.id}>
+        <li className={route.class} key={route.id}>
           <NavLink to={route.path} exact>
             {route.text}
           </NavLink>
@@ -29,6 +35,7 @@ const Navbar = () => {
       ))
       }
       </ul>
+      <p className="user-login"><i className="fas fa-user" /></p>
     </nav>
   );
 };

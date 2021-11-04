@@ -1,3 +1,255 @@
 * {
   list-style-type: none;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.nav-container {
+  display: flex;
+  height: 70px;
+  padding: 0 70px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.logo {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Montserrat, sans-serif;
+}
+
+.logo-text-1 {
+  text-transform: capitalize;
+  font-weight: bolder;
+  color: #0290ff;
+  font-size: 1.5rem;
+}
+
+.logo-text-2 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #0290ff;
+  font-size: 1.5rem;
+}
+
+.links {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+.BOOKS,
+.CATEGORIES {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.9px;
+}
+
+.BOOKS > a,
+.CATEGORIES > a {
+  text-decoration: none;
+  color: #c0c0c0;
+}
+
+a.active {
+  color: #121212;
+}
+
+.user-login {
+  width: 59%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-user {
+  color: #0290ff;
+  padding: 11px;
+  border: 1px solid #eee;
+  border-radius: 50px;
+}
+
+/* books css */
+.book {
+  display: flex;
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  margin-top: 20px;
+  background-color: #fff;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.book-col-1 {
+  width: 50%;
+}
+
+.book-category {
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: #c0c0c0;
+  margin: 0 2.438rem 0 0;
+}
+
+.book-title {
+  font-family: Roboto, sans-serif;
+  font-size: 1.375rem;
+  margin: 0.188rem 20.188rem 0 0;
+  text-transform: capitalize;
+}
+
+.col1-subcol-2 {
+  margin-top: 30px;
+}
+
+.book-btnc1 {
+  border: none;
+  background: #fff;
+  color: #4386bf;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  padding: 0;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  cursor: pointer;
+}
+
+.book-col-2 {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  gap: 15px;
+}
+
+.oval {
+  border: 5px solid;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(98deg, #307bbe, #379cf6) border-box;
+  width: 60px;
+  height: 60px;
+  border-color: transparent;
+  border-radius: 50%;
+}
+
+.progress-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.progress-text > p {
+  margin: 0;
+}
+
+.porcentage {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  color: #121212;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+}
+
+.completed {
+  font-family: Montserrat, sans-serif;
+  color: #c0c0c0;
+  font-size: 12px;
+}
+
+.book-col-3 {
+  width: 20%;
+}
+
+.current-chapter {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #c0c0c0;
+  text-transform: uppercase;
+  font-size: 0.813rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.current-lesson {
+  font-family: 'Roboto Slab', sans-serif;
+  color: black;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.update-progress {
+  background: #0290ff;
+  border: none;
+  padding: 7px 20px;
+  color: #fff;
+  font-family: 'Roboto Slab', sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/* booklist css */
+.list-container {
+  width: 90%;
+  height: 370px;
+  overflow: auto;
+  margin: 20px auto;
+  padding: 0;
+  padding-bottom: 40px;
+}
+
+/* form css */
+.form-container {
+  width: 90%;
+  margin: auto;
+  border-top: 2px solid #e0e0e0;
+}
+
+.form-container > p {
+  margin: 0;
+  margin-top: 15px;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #888;
+  letter-spacing: -0.18px;
+}
+
+form {
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+#title,
+#category {
+  padding: 10px;
+  width: 50%;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  font-family: Montserrat, sans-serif;
+  text-transform: capitalize;
+}
+
+#category {
+  width: 30%;
+}
+
+.addbook {
+  font-family: 'Roboto Slab', sans-serif;
+  width: 150px;
+  font-weight: bolder;
+  border: none;
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
