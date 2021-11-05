@@ -1,0 +1,12 @@
+function fibonacci(){
+  let p = 0, c = 1, n =0;
+  while(c<20){
+    console.log(c);    
+    n = p + c;
+    p = c;
+    c = n;
+  }
+  
+}
+
+fibonacci();
